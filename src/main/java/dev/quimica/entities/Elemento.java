@@ -7,9 +7,9 @@ import javax.persistence.Entity;
 public class Elemento extends PanacheEntity {
 
     private Integer numeroAtomico;
-    private String field;
+    private String nome;
     private String simbolo;
-    private Double massaAtomica;
+    private String massaAtomica;
 
     public Integer getNumeroAtomico() {
         return numeroAtomico;
@@ -19,12 +19,12 @@ public class Elemento extends PanacheEntity {
         this.numeroAtomico = numeroAtomico;
     }
 
-    public String getField() {
-        return field;
+    public String getNome() {
+        return nome;
     }
 
-    public void setField(String field) {
-        this.field = field;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSimbolo() {
@@ -35,11 +35,11 @@ public class Elemento extends PanacheEntity {
         this.simbolo = simbolo;
     }
 
-    public Double getMassaAtomica() {
+    public String getMassaAtomica() {
         return massaAtomica;
     }
 
-    public void setMassaAtomica(Double massaAtomica) {
+    public void setMassaAtomica(String massaAtomica) {
         this.massaAtomica = massaAtomica;
     }
 }
