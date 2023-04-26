@@ -2,6 +2,9 @@ package dev.quimica.entities;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Elemento extends PanacheEntity {
@@ -11,35 +14,29 @@ public class Elemento extends PanacheEntity {
     private String simbolo;
     private String massaAtomica;
 
-    public Integer getNumeroAtomico() {
-        return numeroAtomico;
+    public Elemento() {
     }
 
-    public void setNumeroAtomico(Integer numeroAtomico) {
+    public Elemento(Integer numeroAtomico, String nome, String simbolo, String massaAtomica) {
         this.numeroAtomico = numeroAtomico;
+        this.nome = nome;
+        this.simbolo = simbolo;
+        this.massaAtomica = massaAtomica;
+    }
+
+    public Integer getNumeroAtomico() {
+        return numeroAtomico;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getSimbolo() {
         return simbolo;
     }
 
-    public void setSimbolo(String simbolo) {
-        this.simbolo = simbolo;
-    }
-
     public String getMassaAtomica() {
         return massaAtomica;
-    }
-
-    public void setMassaAtomica(String massaAtomica) {
-        this.massaAtomica = massaAtomica;
     }
 }
