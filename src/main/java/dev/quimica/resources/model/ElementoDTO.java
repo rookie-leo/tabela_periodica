@@ -9,7 +9,11 @@ public class ElementoDTO {
     public String simbolo;
     public String massaAtomica;
 
-    public ElementoDTO() {}
+    /**
+     * @deprecated uso exclusivo do Hibernate
+     * */
+    @Deprecated
+    ElementoDTO() {}
 
     public ElementoDTO(Elemento elemento) {
         numeroAtomico = elemento.getNumeroAtomico();

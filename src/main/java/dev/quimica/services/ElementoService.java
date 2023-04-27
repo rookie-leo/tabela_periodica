@@ -23,10 +23,10 @@ public class ElementoService {
     }
 
     @Transactional
-    public Set<ElementoDTO> createElemento(ElementoDTO request) {
+    public ElementoDTO createElemento(ElementoDTO request) {
         Elemento elemento = request.toModel();
         elemento.persist();
 
-        return listAll();
+        return request;
     }
 }

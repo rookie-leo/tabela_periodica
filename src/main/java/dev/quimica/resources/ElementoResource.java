@@ -9,6 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.Set;
 
 @Path("/elementos")
@@ -24,7 +25,7 @@ public class ElementoResource {
     }
 
     @POST
-    public Set<ElementoDTO> createElemento(ElementoDTO request) {
-        return service.createElemento(request);
+    public Response createElemento(ElementoDTO request) {
+        return Response.ok(service.createElemento(request)).build();
     }
 }
