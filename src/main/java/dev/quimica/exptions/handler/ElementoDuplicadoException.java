@@ -1,6 +1,6 @@
 package dev.quimica.exptions.handler;
 
-public class ElementoDuplicadoException extends Exception {
+public class ElementoDuplicadoException extends RuntimeException {
 
     public ElementoDuplicadoException() { super(); }
 

@@ -9,13 +9,7 @@ public class ElementoExceptionHandler implements ExceptionMapper<Exception> {
 
     @Override
     public Response toResponse(Exception e) {
-        return mapExceptionToResponse(e);
-    }
-
-    private Response mapExceptionToResponse(Exception ex) {
-        if (ex instanceof ElementoDuplicadoException) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(ex.getMessage());
-
-        return null;// TODO - implementar um retorno generico
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
     }
 
 }

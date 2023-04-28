@@ -5,6 +5,7 @@ import dev.quimica.resources.model.ElementoDTO;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
+import javax.ws.rs.NotFoundException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,5 +29,16 @@ public class ElementoService {
         elemento.persist();
 
         return request;
+    }
+
+    @Transactional
+    public void deleteByNumeroAtomico(Integer numeroAtomica) {
+        Elemento elemento = Elemento.findByNumeroAtomico(numeroAtomica);
+        if (elemento.isPersistent()) {
+            elemento.delete();
+        } else {
+            throw new NotFoundException("Elemento não encontrado!");
+        }
+
     }
 }
