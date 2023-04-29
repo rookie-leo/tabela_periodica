@@ -36,6 +36,10 @@ public class ElementoService {
         return new ElementoDTO(Objects.requireNonNull(Elemento.findByNumeroAtomico(numeroAtomico)));
     }
 
+    public ElementoDTO findByNome(String nome) {
+        return new ElementoDTO(Objects.requireNonNull(Elemento.findByNome(nome)));
+    }
+
     @Transactional
     public void deleteByNumeroAtomico(Integer numeroAtomica) {
         Elemento elemento = Elemento.findByNumeroAtomico(numeroAtomica);
@@ -46,5 +50,6 @@ public class ElementoService {
         }
 
     }
+
 
 }

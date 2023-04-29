@@ -40,6 +40,16 @@ public class Elemento extends PanacheEntity {
         return null; //TODO - implementar um retorno
     }
 
+    public static Elemento findByNome(String nome) {
+        try {
+            List<Elemento> elementoList = Elemento.list("nome", nome);
+            return elementoList.get(0);
+        } catch (RuntimeException ex) {
+        ex.getMessage();
+    }
+        return null; //TODO - implementar um retorno
+    }
+
     public Integer getNumeroAtomico() {
         return numeroAtomico;
     }

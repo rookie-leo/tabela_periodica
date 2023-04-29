@@ -32,6 +32,12 @@ public class ElementoResource {
         return Response.ok(service.findByNumeroAtomico(numeroAtomico)).build();
     }
 
+    @GET
+    @Path("/nome/{nome}")
+    public Response findByNome(@PathParam("nome") String nome) {
+        return Response.ok(service.findByNome(nome)).build();
+    }
+
     @DELETE()
     @Path("/{numeroAtomico}")
     public Response deleteElemento(@PathParam("numeroAtomico") Integer numeroAtomica) {
