@@ -7,6 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @ApplicationScoped
@@ -31,6 +32,10 @@ public class ElementoService {
         return request;
     }
 
+    public ElementoDTO findByNumeroAtomico(Integer numeroAtomico) {
+        return new ElementoDTO(Objects.requireNonNull(Elemento.findByNumeroAtomico(numeroAtomico)));
+    }
+
     @Transactional
     public void deleteByNumeroAtomico(Integer numeroAtomica) {
         Elemento elemento = Elemento.findByNumeroAtomico(numeroAtomica);
@@ -41,4 +46,5 @@ public class ElementoService {
         }
 
     }
+
 }
